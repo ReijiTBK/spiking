@@ -7,12 +7,9 @@ const formsg = require('@opengovsg/formsg-sdk')()
 
 // This is where your domain is hosted, and should match
 // the URI supplied to FormSG in the form dashboard
-// const POST_URI = 'https://my-domain.com/submissions'
 const POST_URI = process.env.POST_URI;
-console.log("POST_URI", POST_URI);
 // Your form's secret key downloaded from FormSG upon form creation
 const formSecretKey = process.env.FORM_SECRET_KEY
-console.log("SECRET", formSecretKey);
 // Set to true if you need to download and decrypt attachments from submissions
 const HAS_ATTACHMENTS = false
 
@@ -44,6 +41,7 @@ app.post(
         console.log(submission)
       // Continue processing the submission
     } else {
+        console.log('unable to decrypt')
       // Could not decrypt the submission
     }
   }
