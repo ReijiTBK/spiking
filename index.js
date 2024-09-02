@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const POST_URI = {{ POST_URI }}
+const POST_URI = process.env.POST_URI
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
