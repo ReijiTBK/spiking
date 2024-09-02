@@ -14,5 +14,5 @@ app.post('/', (req, res)=>{
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
-  console.log(process.env.FORM_POST_URI);
+  console.log({{ <POST_URI> }});
 });
