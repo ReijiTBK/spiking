@@ -22,7 +22,7 @@ app.post(
       // Continue processing the POST body
       return next()
     } catch (e) {
-        console.log('e', "ERROR HERE")
+        console.log('error here!', e)
       return res.status(401).send({ message: 'Unauthorized' })
     }
   },
