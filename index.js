@@ -32,6 +32,7 @@ app.post(
   async function (req, res, next) {
     // If `verifiedContent` is provided in `req.body.data`, the return object
     // will include a verified key.
+    console.log("What is the Body? ",req.body.data);
     const submission = HAS_ATTACHMENTS
       ? await formsg.crypto.decryptWithAttachments(formSecretKey, req.body.data)
       : formsg.crypto.decrypt(formSecretKey, req.body.data)
