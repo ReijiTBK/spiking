@@ -9,7 +9,8 @@ const formsg = require('@opengovsg/formsg-sdk')()
 // the URI supplied to FormSG in the form dashboard
 const POST_URI = process.env.POST_URI;
 // Your form's secret key downloaded from FormSG upon form creation
-const formSecretKey = process.env.FORM_SECRET_KEY
+let formSecretKey = process.env.FORM_SECRET_KEY
+const mformSecretKey = JSON.parese(process.env.FORM_SECRET_KEY);
 // Set to true if you need to download and decrypt attachments from submissions
 const HAS_ATTACHMENTS = false
 
@@ -32,6 +33,7 @@ app.post(
   async function (req, res, next) {
     // If `verifiedContent` is provided in `req.body.data`, the return object
     // will include a verified key.
+    formSecretKey = mformSecretyKey[req.body.data.formId]
     console.log("What is the Body? ",req.body.data);
     const submission = HAS_ATTACHMENTS
       ? await formsg.crypto.decryptWithAttachments(formSecretKey, req.body.data)
