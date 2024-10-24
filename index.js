@@ -10,7 +10,7 @@ const formsg = require('@opengovsg/formsg-sdk')()
 const POST_URI = process.env.POST_URI;
 // Your form's secret key downloaded from FormSG upon form creation
 let formSecretKey = process.env.FORM_SECRET_KEY
-const mformSecretKey = JSON.parese(process.env.FORM_SECRET_KEY);
+const mformSecretKey = JSON.parse(process.env.FORM_SECRET_KEY);
 // Set to true if you need to download and decrypt attachments from submissions
 const HAS_ATTACHMENTS = false
 
