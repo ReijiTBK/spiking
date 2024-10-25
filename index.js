@@ -13,6 +13,7 @@ let formSecretKey = process.env.FORM_SECRET_KEY
 const mformSecretKey = {
   "671a69259c57efa2b22c635d":"Y0KsmzJwZp48w1QjXJDd+weJbOtiBIv+08Fg1m0CVcw=",
   "671a68a0b188c38b559ba87c":"S8iFHSyABGkY2PFaNeo4Z21fv4UcfkBFvXY/2/M4AB8=",
+  "671b59f4de58b089be023b37":"wpV8ya7d0xN54CiiyNUEDf94d6hcg6HkdTWHEbvad18="
 }
 // Set to true if you need to download and decrypt attachments from submissions
 const HAS_ATTACHMENTS = false
