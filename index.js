@@ -16,7 +16,7 @@ const mformSecretKey = {
   "671b59f4de58b089be023b37":"wpV8ya7d0xN54CiiyNUEDf94d6hcg6HkdTWHEbvad18="
 }
 // Set to true if you need to download and decrypt attachments from submissions
-const HAS_ATTACHMENTS = false
+let HAS_ATTACHMENTS = false
 
 app.post(
   '/submissions',
@@ -40,6 +40,7 @@ app.post(
     formSecretKey = mformSecretKey[req.body.data.formId];
     console.log('What is the secret', formSecretKey);
     console.log("What is the Body? ",req.body.data);
+    HAS_ATTACHMENTS = req.body.data.attachmentDownloadUrls ? true :false;
     const submission = HAS_ATTACHMENTS
       ? await formsg.crypto.decryptWithAttachments(formSecretKey, req.body.data)
       : formsg.crypto.decrypt(formSecretKey, req.body.data)
