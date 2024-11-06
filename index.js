@@ -47,7 +47,10 @@ app.post(
 
     // If the decryption failed, submission will be `null`.
     if (submission) {
-        console.log(submission)
+        console.log("Submission");
+        console.log(submission);
+        console.log("ATtachment");
+      console.log(submission.attachments["672b4cd51fa81d4f4ab36645"].content[0]);
       // Continue processing the submission
     } else {
         console.log('unable to decrypt')
