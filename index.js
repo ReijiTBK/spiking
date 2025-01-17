@@ -40,7 +40,7 @@ app.post(
     formSecretKey = mformSecretKey[req.body.data.formId];
     console.log('What is the secret', formSecretKey);
     console.log("What is the Body? ",req.body.data);
-    HAS_ATTACHMENTS = req.body.data.attachmentDownloadUrls ? true :false;
+    HAS_ATTACHMENTS = Object.keys(req.body.data.attachmentDownloadUrls).length > 0;
     const submission = HAS_ATTACHMENTS
       ? await formsg.crypto.decryptWithAttachments(formSecretKey, req.body.data)
       : formsg.crypto.decrypt(formSecretKey, req.body.data)
