@@ -49,9 +49,14 @@ app.post(
     if (submission) {
         console.log("Submission");
         console.log(submission);
-        console.log("ATtachment");
-        const b64 = Buffer.from(submission.attachments["672b4cd51fa81d4f4ab36645"].content).toString('base64');
-        console.log(b64);
+        
+        if(HAS_ATTACHMENT){
+          console.log("ATtachment");
+          const b64 = Buffer.from(submission.attachments["672b4cd51fa81d4f4ab36645"].content).toString('base64');  
+          console.log(b64);
+        }
+        
+        
       // Continue processing the submission
     } else {
         console.log('unable to decrypt')
