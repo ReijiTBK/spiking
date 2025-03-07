@@ -38,6 +38,7 @@ app.post(
     // If `verifiedContent` is provided in `req.body.data`, the return object
     // will include a verified key.
     formSecretKey = mformSecretKey[req.body.data.formId];
+    console.log('What is the initial body', req.body);
     console.log('What is the secret', formSecretKey);
     console.log("What is the Body? ",req.body.data);
     HAS_ATTACHMENTS = Object.keys(req.body.data.attachmentDownloadUrls).length > 0;
