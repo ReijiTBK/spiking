@@ -50,6 +50,8 @@ app.post(
     if (submission) {
         console.log("Submission");
         console.log(submission);
+        console.log("Content");
+        console.log(JSON.toString(submission.content));
         
         if(HAS_ATTACHMENTS){
           console.log("ATtachment");
