@@ -39,7 +39,7 @@ app.post(
     // If `verifiedContent` is provided in `req.body.data`, the return object
     // will include a verified key.
     formSecretKey = mformSecretKey[req.body.data.formId];
-    console.log('What is the initial body', JSON.stringfy(req.body));
+    console.log('What is the initial body', JSON.stringify(req.body));
     console.log('What is the secret', formSecretKey);
     console.log("What is the Body? ",req.body.data);
     HAS_ATTACHMENTS = Object.keys(req.body.data.attachmentDownloadUrls).length > 0;
@@ -50,7 +50,7 @@ app.post(
     // If the decryption failed, submission will be `null`.
     if (submission) {
         console.log("Submission");
-        console.log(JSON.stringfy(submission));
+        console.log(JSON.stringify(submission));
         console.log("Content");
         console.log(JSON.toString(submission.content));
         
