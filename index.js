@@ -14,6 +14,7 @@ const mformSecretKey = {
   "671a69259c57efa2b22c635d":"Y0KsmzJwZp48w1QjXJDd+weJbOtiBIv+08Fg1m0CVcw=",
   "671a68a0b188c38b559ba87c":"S8iFHSyABGkY2PFaNeo4Z21fv4UcfkBFvXY/2/M4AB8=",
   "671b59f4de58b089be023b37":"wpV8ya7d0xN54CiiyNUEDf94d6hcg6HkdTWHEbvad18="
+"67e0ae0765d31dda40fa3b30":"sZyZvSsbhd/WLz2j7y7YdfF2haTV3krsMc1ijlKYBc4="
 }
 // Set to true if you need to download and decrypt attachments from submissions
 let HAS_ATTACHMENTS = false
@@ -38,18 +39,18 @@ app.post(
     // If `verifiedContent` is provided in `req.body.data`, the return object
     // will include a verified key.
     formSecretKey = mformSecretKey[req.body.data.formId];
-    console.log('What is the initial body', req.body);
+    console.log('What is the initial body', JSON.stringfy(req.body));
     console.log('What is the secret', formSecretKey);
     console.log("What is the Body? ",req.body.data);
     HAS_ATTACHMENTS = Object.keys(req.body.data.attachmentDownloadUrls).length > 0;
     const submission = HAS_ATTACHMENTS
       ? await formsg.crypto.decryptWithAttachments(formSecretKey, req.body.data)
       : formsg.crypto.decrypt(formSecretKey, req.body.data)
-
+    
     // If the decryption failed, submission will be `null`.
     if (submission) {
         console.log("Submission");
-        console.log(submission);
+        console.log(JSON.stringfy(submission));
         console.log("Content");
         console.log(JSON.toString(submission.content));
         
