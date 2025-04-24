@@ -14,7 +14,8 @@ const mformSecretKey = {
   "671a69259c57efa2b22c635d":"Y0KsmzJwZp48w1QjXJDd+weJbOtiBIv+08Fg1m0CVcw=",
   "671a68a0b188c38b559ba87c":"S8iFHSyABGkY2PFaNeo4Z21fv4UcfkBFvXY/2/M4AB8=",
   "671b59f4de58b089be023b37":"wpV8ya7d0xN54CiiyNUEDf94d6hcg6HkdTWHEbvad18=",
-"67e0ae0765d31dda40fa3b30":"sZyZvSsbhd/WLz2j7y7YdfF2haTV3krsMc1ijlKYBc4="
+"67e0ae0765d31dda40fa3b30":"sZyZvSsbhd/WLz2j7y7YdfF2haTV3krsMc1ijlKYBc4=",
+  "6809f7fd58583d958289da16":"yGLmuaGY8sFymHbH6UIklcxuG9jr1R23PqEe5ZgTQnE="
 }
 // Set to true if you need to download and decrypt attachments from submissions
 let HAS_ATTACHMENTS = false
