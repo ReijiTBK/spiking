@@ -40,6 +40,7 @@ app.post(
     // If `verifiedContent` is provided in `req.body.data`, the return object
     // will include a verified key.
     formSecretKey = mformSecretKey[req.body.data.formId];
+    console.log('Do i have secretKey?', formSecretKey);
     console.log('What is the initial body', JSON.stringify(req.body));
     console.log('What is the secret', formSecretKey);
     console.log("What is the Body? ",req.body.data);
